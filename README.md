@@ -1,16 +1,44 @@
-# expense_tracker_app
+# Widgets and Classes Overview
 
-A new Flutter project.
+## Widgets
 
-## Getting Started
+### Expenses (`lib/widgets/expenses.dart`)
+- **Type:** Stateful widget
+- **Description:** Manages the list of expenses and displays the main UI.
+- **Dependencies:** 
+  - `ExpensesList`
+  - `Chart`
 
-This project is a starting point for a Flutter application.
+### ExpensesList (`lib/widgets/expenses_list/expenses_list.dart`)
+- **Type:** Stateless widget
+- **Description:** Displays a list of expenses.
+- **Dependencies:** 
+  - `ExpenseItem` (for each expense item)
 
-A few resources to get you started if this is your first Flutter project:
+### NewExpense (`lib/widgets/expenses_list/new_expense.dart`)
+- **Type:** Stateful widget
+- **Description:** Provides a form to add a new expense.
+- **Features:** 
+  - Uses `TextEditingController` for input fields.
+  - Handles form submission.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Chart (`lib/widgets/charts/chart.dart`)
+- **Type:** Stateless widget
+- **Description:** Displays a chart of expenses.
+- **Dependencies:**
+  - `ChartBar` (for each category of expenses)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Classes
+
+### Expense (`lib/models/expense.dart`)
+- **Description:** Represents an expense.
+- **Properties:**
+  - `title`
+  - `amount`
+  - `date`
+  - `category`
+
+### ExpenseBucket (`lib/models/expense_bucket.dart`)
+- **Description:** Represents a bucket of expenses for a specific category.
